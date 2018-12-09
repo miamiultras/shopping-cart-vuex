@@ -4,15 +4,14 @@
     <p v-if="loading">Loading...</p>
     <ul v-else>
       <li v-for="(product, index) in products" :key="index">
-        {{product.title}} - {{product.price}} - {{product.inventory}}
+        {{product.title}} - {{product.price | currency }} - {{product.inventory}}
         <button @click="addProductToCart(product)">Add to cart</button>
       </li>
     </ul>
   </div>
 </template>
-
+ 
 <script>
-
 export default {
 
   data () {
